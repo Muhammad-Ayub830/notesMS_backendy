@@ -56,7 +56,13 @@ router.post('/login',async (req,res)=>{
         },process.env.SECRET_KEY,{
             expiresIn : "1d"
         })
-        res.cookie("token",token)
+       res.cookie("token", token, {
+  httpOnly: true,   // prevent JS access to cookie
+  secure: true,     // required for HTTPS (Railway uses HTTPS)
+  sameSite: "None", // allow cross-site cookies (Vercel → Railway)
+  maxAge: 24 * 60 * 60 * 1000 // 1 day
+});
+
         res.status(200).json({message:"logged in",redirect:'/home'})
      }
 
