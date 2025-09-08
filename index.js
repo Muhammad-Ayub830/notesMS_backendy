@@ -8,7 +8,7 @@ const AuthMiddleWare = require("./controllers/authmdiileware");
 const UserRegister = require("./models/user.model");
 dotenv.config()
 server.use(cors({
-    origin: 'http://notes-ms-front.vercel.app',
+    origin: 'https://notes-ms-front.vercel.app',
     credentials:true
 }))
 const cookieParser = require("cookie-parser");
