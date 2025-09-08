@@ -8,7 +8,7 @@ const AuthMiddleWare = require("./controllers/authmdiileware");
 const UserRegister = require("./models/user.model");
 dotenv.config()
 server.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://notesmsbackendy-production.up.railway.app/',
     credentials:true
 }))
 const cookieParser = require("cookie-parser");
